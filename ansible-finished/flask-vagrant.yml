@@ -3,7 +3,7 @@
   sudo: True
   gather_facts: True
   vars:
-    - FLASKR_BASE_DIR: "/home/vagrant/share"
-    - FLASKR_CONFIG: "vagrant.py"
+    - APP_BASE_DIR: "/home/vagrant/share"
+    - APP_CONFIG: "vagrant.py"
   roles:
-    - flaskr
+    - flask_app

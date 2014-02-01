@@ -1,0 +1,27 @@
+---
+
+- name: Install system packages
+  apt: pkg={{ item }} update_cache=yes
+  with_items:
+    - git
+    - sqlite3
+    - python2.7
+    - python-pip
+    - python2.7-dev
+
+- name: Create the base directory
+  file: path={{ APP_BASE_DIR }} state=directory
+
+- name: Checkout the git repository
+  git:
+    repo={{ github_url }} dest={{ repo_path }}
+    version={{ git_version }}
+
+- name: Install Python requirements
+  pip:  requirements={{ pip_requirements }}
+
+- name: Install upstart script
+  template: src="flask_app.conf.j2" dest="/etc/init/flask_app.conf"
+
+- name: Start Flask app service
+  service: name=flask_app state=started
