@@ -1,12 +1,7 @@
 ---
 
 - name: Install system packages
-  apt: pkg={{ item }} update_cache=yes
-  with_items:
-    - git
-    - python2.7
-    - python-pip
-    - python2.7-dev
+  apt: "pkg=git,python2.7,python-pip update_cache=yes"
 
 - name: Create the base directory
   file: path={{ APP_BASE_DIR }} state=directory
