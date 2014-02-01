@@ -1,0 +1,30 @@
+---
+
+- name: Install system packages
+  apt: pkg={{ item }} update_cache=yes
+  with_items:
+    - git
+    - sqlite3
+    - python2.7
+    - python-pip
+    - python2.7-dev
+
+- name: Create the base directory
+  file: path={{ FLASKR_BASE_DIR }} state=directory
+
+- name: Checkout the git repository
+  git:
+    repo={{ flaskr_github_url }} dest={{ flaskr_repo_path }}
+    version={{ flaskr_git_version }}
+
+- name: Install Python requirements
+  pip:  requirements={{ flaskr_pip_requirements }}
+
+- name: Initialize database
+  shell: "sqlite3 {{ flaskr_db }} < {{ flaskr_db_schema }} creates={{ flaskr_db }}"
+
+- name: Install upstart script
+  template: src="flaskr.conf.j2" dest="/etc/init/flaskr.conf"
+
+- name: Start flaskr service
+  service: name=flaskr state=started

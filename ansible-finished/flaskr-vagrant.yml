@@ -1,0 +1,7 @@
+- name: Configure instance(s)
+  hosts: all
+  sudo: True
+  gather_facts: True
+  #vars: []
+  roles:
+    - flaskr

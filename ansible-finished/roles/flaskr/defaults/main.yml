@@ -1,0 +1,12 @@
+---
+
+FLASKR_BASE_DIR: "/opt/flaskr"
+
+flaskr_github_url: "https://github.com/wedaly/flask-hello-world.git"
+flaskr_repo_path: "{{ FLASKR_BASE_DIR }}/flask-hello-world"
+flaskr_git_version: "origin/master"
+flaskr_pip_requirements: "{{ flaskr_repo_path }}/flaskr/requirements.txt"
+flaskr_db: "{{ FLASKR_BASE_DIR }}/flaskr.db"
+flaskr_db_schema: "{{ flaskr_repo_path }}/flaskr/schema.sql"
+flaskr_start_script: "{{ flaskr_repo_path }}/flaskr/flaskr.py"
+flaskr_log: "{{ FLASKR_BASE_DIR }}/flaskr_stderr.log"
