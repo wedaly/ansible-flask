@@ -1,4 +1,4 @@
-flask-hello-world
+ansible-flaskr
 =================
 
-Hello World Flask App
+Demonstration of how to use Ansible to install a simple Flask application.

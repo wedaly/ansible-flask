@@ -3,8 +3,8 @@
 FLASKR_BASE_DIR: "/opt/flaskr"
 FLASKR_CONFIG: "aws.py"
 
-flaskr_github_url: "https://github.com/wedaly/flask-hello-world.git"
-flaskr_repo_path: "{{ FLASKR_BASE_DIR }}/flask-hello-world"
+flaskr_github_url: "https://github.com/wedaly/ansible-flaskr.git"
+flaskr_repo_path: "{{ FLASKR_BASE_DIR }}/ansible-flaskr"
 flaskr_git_version: "origin/master"
 flaskr_pip_requirements: "{{ flaskr_repo_path }}/flaskr/requirements.txt"
 flaskr_db: "{{ FLASKR_BASE_DIR }}/flaskr.db"
