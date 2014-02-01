@@ -2,6 +2,8 @@
   hosts: all
   sudo: True
   gather_facts: True
-  #vars: []
+  vars:
+    - FLASKR_BASE_DIR: "/home/vagrant/share"
+    - FLASKR_CONFIG: "vagrant.py"
   roles:
     - flaskr

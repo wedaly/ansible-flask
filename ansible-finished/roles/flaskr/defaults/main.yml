@@ -1,6 +1,7 @@
 ---
 
 FLASKR_BASE_DIR: "/opt/flaskr"
+FLASKR_CONFIG: "aws.py"
 
 flaskr_github_url: "https://github.com/wedaly/flask-hello-world.git"
 flaskr_repo_path: "{{ FLASKR_BASE_DIR }}/flask-hello-world"
