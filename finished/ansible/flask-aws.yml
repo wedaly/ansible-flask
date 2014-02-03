@@ -1,0 +1,6 @@
+- name: Configure instance(s)
+  hosts: all
+  sudo: True
+  gather_facts: True
+  roles:
+    - flask_app

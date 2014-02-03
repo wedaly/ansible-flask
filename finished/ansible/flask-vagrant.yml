@@ -1,0 +1,9 @@
+- name: Configure instance(s)
+  hosts: all
+  sudo: True
+  gather_facts: True
+  vars:
+    - APP_BASE_DIR: "/home/vagrant/share"
+    - APP_CONFIG: "vagrant.py"
+  roles:
+    - flask_app

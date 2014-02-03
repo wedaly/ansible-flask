@@ -39,3 +39,5 @@ nosetests.xml
 vagrant_ansible_inventory_default
 .vagrant
 share
+
+.DS_Store

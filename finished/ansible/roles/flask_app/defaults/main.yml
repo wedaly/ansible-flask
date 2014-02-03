@@ -1,0 +1,11 @@
+---
+
+APP_BASE_DIR: "/opt/www"
+APP_CONFIG: "aws.py"
+
+github_url: "https://github.com/wedaly/ansible-flask.git"
+repo_path: "{{ APP_BASE_DIR }}/ansible-flask"
+git_version: "origin/master"
+pip_requirements: "{{ repo_path }}/flask_app/requirements.txt"
+start_script: "{{ repo_path }}/flask_app/app.py"
+log: "{{ APP_BASE_DIR }}/stderr.log"
